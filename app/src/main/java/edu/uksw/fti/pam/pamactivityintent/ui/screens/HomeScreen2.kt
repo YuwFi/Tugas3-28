@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -24,7 +25,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import edu.uksw.fti.pam.pamactivityintent.R
 import edu.uksw.fti.pam.pamactivityintent.ui.theme.PAMActivityIntentTheme
-
 
 data class Popular(
     var painter: Painter,
@@ -67,7 +67,7 @@ fun HomeScreen2(){
             Text(
                 text = stringResource(R.string.text_popular),
                 fontWeight = FontWeight.SemiBold,
-                fontFamily = FontFamily.Monospace,
+                fontFamily = Poppins,
                 fontSize = 20.sp,
                 modifier = Modifier
                     .padding(top = 10.dp, bottom = 5.dp)
@@ -170,7 +170,7 @@ fun LatestList(){
         Text(
             text = stringResource(R.string.text_latestrelease),
             fontWeight = FontWeight.SemiBold,
-            fontFamily = FontFamily.Monospace,
+            fontFamily = Poppins,
             fontSize = 20.sp,
             modifier = Modifier
                 .padding(top = 10.dp, bottom = 5.dp)
@@ -271,7 +271,7 @@ fun SeasonList(){
         Text(
             text = stringResource(R.string.text_seasonal),
             fontWeight = FontWeight.SemiBold,
-            fontFamily = FontFamily.Monospace,
+            fontFamily = Poppins,
             fontSize = 20.sp,
             modifier = Modifier
                 .padding(top = 10.dp, bottom = 5.dp)
@@ -309,7 +309,7 @@ fun ListCardSeas(data:Season) {
                     Column(modifier = Modifier.padding(5.dp)) {
                         Text(
                             text = data.title,
-//                        fontFamily = Poppins,
+                            fontFamily = Poppins,
                             fontWeight = FontWeight.SemiBold,
                             color = Color.Black,
                             fontSize = 13.sp,
@@ -318,7 +318,7 @@ fun ListCardSeas(data:Season) {
                         )
                         Text(
                             text = data.desc,
-//                        fontFamily = Poppins,
+                            fontFamily = Poppins,
                             fontSize = 10.sp,
                             color = Color.Black,
                             modifier = Modifier
@@ -327,7 +327,7 @@ fun ListCardSeas(data:Season) {
                         )
                         Text(
                             text = data.author,
-//                        fontFamily = Poppins,
+                            fontFamily = Poppins,
                             fontSize = 13.sp,
                             color = Color.Black,
                             fontStyle = FontStyle.Italic,
@@ -355,7 +355,7 @@ fun RecentList(){
         Text(
             text = stringResource(R.string.text_recentlyadd),
             fontWeight = FontWeight.SemiBold,
-            fontFamily = FontFamily.Monospace,
+            fontFamily = Poppins,
             fontSize = 20.sp,
             modifier = Modifier
                 .padding(top = 10.dp, bottom = 5.dp)

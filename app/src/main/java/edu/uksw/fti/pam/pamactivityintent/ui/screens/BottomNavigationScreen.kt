@@ -44,8 +44,9 @@ fun NavigationGraph(
         composable(BottomNavItems.Home.screen_route) {
             HomeScreen2()
         }
+
         composable(BottomNavItems.Bookmark.screen_route) {
-            HomeScreen()
+
         }
         composable(BottomNavItems.Titles.screen_route) {
 

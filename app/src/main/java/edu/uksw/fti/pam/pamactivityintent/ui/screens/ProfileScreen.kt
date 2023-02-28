@@ -50,7 +50,6 @@ fun ProfileScreen(fname:String?,lname:String?) {
 
             )
         }
-
         Row(
 
             horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -77,12 +76,13 @@ fun ProfileScreen(fname:String?,lname:String?) {
                 Icon(painter = painterResource(id = R.drawable.ic_bookmark2),
                     contentDescription = null,
                     modifier = Modifier.requiredWidth(20.dp)
-                    )
+                )
                 Text(text = stringResource(R.string.follow),
-                    color = Color.White)
+                    color = Color.White,
+                    fontFamily = Poppins)
 
             }
-            
+
         }
         Column(
             modifier = Modifier.padding(20.dp),
@@ -100,12 +100,14 @@ fun ProfileScreen(fname:String?,lname:String?) {
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 18.sp,
                     color = Color.Black,
+                    fontFamily = Poppins
                 )
 
                 Text(
                     text = "$firstName ",
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Light,
+                    fontFamily = Poppins
                 )
 
             }
@@ -115,12 +117,14 @@ fun ProfileScreen(fname:String?,lname:String?) {
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 18.sp,
                     color = Color.Black,
+                    fontFamily = Poppins
                 )
 
                 Text(
                     text = "$lastName ",
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Light,
+                    fontFamily = Poppins
                 )
 
             }
@@ -131,12 +135,14 @@ fun ProfileScreen(fname:String?,lname:String?) {
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 18.sp,
                     color = Color.Black,
+                    fontFamily = Poppins
                 )
 
                 Text(
                     text = "9a636b76-1f68-45ba-975e-75c36dd676aa",
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Light,
+                    fontFamily = Poppins
                 )
 
             }
@@ -146,6 +152,7 @@ fun ProfileScreen(fname:String?,lname:String?) {
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 18.sp,
                     color = Color.Black,
+                    fontFamily = Poppins
                 )
 
                 Card (
@@ -164,7 +171,8 @@ fun ProfileScreen(fname:String?,lname:String?) {
                     Text(
                         text = stringResource(R.string.member),
                         fontSize = 13.sp,
-                        modifier = Modifier.padding(1.dp)
+                        modifier = Modifier.padding(1.dp),
+                        fontFamily = Poppins
                     )
                 }
 
@@ -177,12 +185,14 @@ fun ProfileScreen(fname:String?,lname:String?) {
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 18.sp,
                     color = Color.Black,
+                    fontFamily = Poppins
                 )
 
                 Text(
                     text = "0",
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Light,
+                    fontFamily = Poppins
                 )
 
             }

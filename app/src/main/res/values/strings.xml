@@ -58,6 +58,9 @@
     <string name="roles">Roles</string>
     <string name="member">Member</string>
     <string name="uploads">Uploads</string>
+
+    <!--    BottomNavigation   -->
+
     <string name="home">Home</string>
     <string name="commuity">Community</string>
     <string name="bookmark">Bookmark</string>

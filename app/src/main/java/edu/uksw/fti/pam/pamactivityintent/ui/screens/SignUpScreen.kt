@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import edu.uksw.fti.pam.pamactivityintent.R
+import edu.uksw.fti.pam.pamactivityintent.ui.screens.Poppins
 import edu.uksw.fti.pam.pamactivityintent.ui.theme.PAMActivityIntentTheme
 
 
@@ -50,7 +51,9 @@ fun SignUp  (
             Text(
                 text = stringResource(R.string.text_signup), Modifier.padding(8.dp),
                 fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,)
+                fontWeight = FontWeight.Bold,
+                fontFamily = Poppins
+            )
 
             Row(
                 modifier = Modifier
@@ -69,14 +72,17 @@ fun SignUp  (
                         unfocusedBorderColor = Color(0xffE6E6E6),
                         backgroundColor = Color(0xffFFFFF),
                     ),
-                    label = { Text(text = stringResource(R.string.text_firstname)) },
+                    label = { Text(
+                        text = stringResource(R.string.text_firstname),
+                        fontFamily = Poppins) },
 
                     )
                 OutlinedTextField(
                     value = lNameInput.toString(),
                     onValueChange = {lNameInput = it},
 
-                    label = { Text(text = stringResource(R.string.text_lastname)) },
+                    label = { Text(text = stringResource(R.string.text_lastname),
+                        fontFamily = Poppins) },
                     modifier = Modifier.requiredWidth(160.dp),
                     shape = RoundedCornerShape(10.dp),
                     colors = TextFieldDefaults.outlinedTextFieldColors(
@@ -91,7 +97,8 @@ fun SignUp  (
                 value = usernameInput.toString(),
                 onValueChange = {usernameInput = it},
 
-                label = { Text(text = stringResource(R.string.text_username)) },
+                label = { Text(text = stringResource(R.string.text_username),
+                    fontFamily = Poppins) },
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(10.dp),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
@@ -106,7 +113,8 @@ fun SignUp  (
                 onValueChange = {passInput = it},
 
                 visualTransformation = PasswordVisualTransformation(),
-                label = { Text(text = stringResource(R.string.text_password)) },
+                label = { Text(text = stringResource(R.string.text_password),
+                    fontFamily = Poppins) },
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(10.dp),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
@@ -121,7 +129,8 @@ fun SignUp  (
                 onValueChange = {cPassInput = it},
 
                 visualTransformation = PasswordVisualTransformation(),
-                label = { Text(text = stringResource(R.string.text_confirmpass)) },
+                label = { Text(text = stringResource(R.string.text_confirmpass),
+                    fontFamily = Poppins) },
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(10.dp),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
@@ -143,7 +152,8 @@ fun SignUp  (
                     modifier = Modifier.padding(start = 200.dp)
                 ) {
                     Text(text = stringResource(R.string.text_ok),
-                        color = Color.White)
+                        color = Color.White,
+                        fontFamily = Poppins)
 
                 }
             }

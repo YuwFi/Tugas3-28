@@ -60,6 +60,8 @@
     <string name="member">Mitglied</string>
     <string name="uploads">Hochladen</string>
 
+    <!--    BottomNavigation   -->
+
     <string name="home">Heim</string>
     <string name="commuity">Gemeinschaft</string>
     <string name="bookmark">Lesezeichen</string>

@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,6 +22,7 @@ import androidx.compose.ui.unit.sp
 import edu.uksw.fti.pam.pamactivityintent.HomeActivity
 import edu.uksw.fti.pam.pamactivityintent.R
 import edu.uksw.fti.pam.pamactivityintent.contracts.SignUpContract
+import edu.uksw.fti.pam.pamactivityintent.ui.screens.Poppins
 import edu.uksw.fti.pam.pamactivityintent.ui.theme.PAMActivityIntentTheme
 
 
@@ -40,12 +42,12 @@ fun LoginForm() {
     val getUsernameFormSignUpActivity = rememberLauncherForActivityResult(
         contract = SignUpContract(),
         onResult = {listProfle = it!!
-        usernameInput = listProfle!![2]
-        passwordInput = listProfle!![3]
-        lNameInput = listProfle!![1]
-        fNameInput = listProfle!![0]
-        cUser = listProfle!![2]
-        cPass = listProfle!![3]}
+            usernameInput = listProfle!![2]
+            passwordInput = listProfle!![3]
+            lNameInput = listProfle!![1]
+            fNameInput = listProfle!![0]
+            cUser = listProfle!![2]
+            cPass = listProfle!![3]}
     )
     Box(modifier =  Modifier
         .fillMaxSize()){
@@ -63,134 +65,142 @@ fun LoginForm() {
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
 
-        ) {
-        Row(
-            modifier = Modifier
-                .padding(top = 30.dp)
-                .padding(bottom = 30.dp),
-
             ) {
-            Image(
-                painter = painterResource(id = R.drawable.im_logo_black),
-                contentDescription = null,
+            Row(
                 modifier = Modifier
-                    .requiredHeight(40.dp)
-            )
-            Text(
-                text = "MangaDex", Modifier.padding(8.dp),
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,)
-        }
-        Card(
-            elevation = 10.dp,
-            shape = RoundedCornerShape(7.dp),
-        ) {
-            Column(
-                modifier = paddingModifier,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
+                    .padding(top = 30.dp)
+                    .padding(bottom = 30.dp),
 
-                Text(text = stringResource(R.string.text_signtitle),
-                    Modifier.padding(8.dp),
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Bold,
+                ) {
+                Image(
+                    painter = painterResource(id = R.drawable.im_logo_black),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .requiredHeight(40.dp)
                 )
+                Text(
+                    text = "MangaDex", Modifier.padding(8.dp),
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,)
+            }
+            Card(
+                elevation = 10.dp,
+                shape = RoundedCornerShape(7.dp),
+            ) {
+                Column(
+                    modifier = paddingModifier,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
 
-                Column(modifier = Modifier.padding(start =10.dp, end = 10.dp)) {
-                    Text(text = stringResource(R.string.text_usernameoremail),
-                        Modifier
-                            .padding(top = 8.dp)
-                            .padding(start = 5.dp),
-                        fontSize = 14.sp,
+                    Text(text = stringResource(R.string.text_signtitle),
+                        Modifier.padding(8.dp),
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = Poppins
                     )
 
-                    OutlinedTextField(
-                        value = usernameInput.toString(),
-                        onValueChange = {usernameInput = it},
-
-                        modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(10.dp),
-                        colors = TextFieldDefaults.outlinedTextFieldColors(
-                            cursorColor = Color(0xffFF6740),
-                            focusedBorderColor = Color(0xffFF6740),
-                            unfocusedBorderColor = Color(0xffE6E6E6),
-                            backgroundColor = Color(0xffE6E6E6),
+                    Column(modifier = Modifier.padding(start =10.dp, end = 10.dp)) {
+                        Text(text = stringResource(R.string.text_usernameoremail),
+                            Modifier
+                                .padding(top = 8.dp)
+                                .padding(start = 5.dp),
+                            fontSize = 14.sp,
+                            fontFamily = Poppins
                         )
-                    )
 
-                }
+                        OutlinedTextField(
+                            value = usernameInput.toString(),
+                            onValueChange = {usernameInput = it},
 
-                Column(modifier = Modifier.padding(start =10.dp, end = 10.dp)) {
-                    Text(text = stringResource(R.string.text_password),
-                        Modifier
-                            .padding(top = 8.dp)
-                            .padding(start = 5.dp),
-                        fontSize = 14.sp,
-
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(10.dp),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                cursorColor = Color(0xffFF6740),
+                                focusedBorderColor = Color(0xffFF6740),
+                                unfocusedBorderColor = Color(0xffE6E6E6),
+                                backgroundColor = Color(0xffE6E6E6),
+                            )
                         )
-                    OutlinedTextField(
-                        value = passwordInput.toString(),
-                        onValueChange = {passwordInput = it},
-
-                        visualTransformation = PasswordVisualTransformation(),
-                        modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(10.dp),
-                        colors = TextFieldDefaults.outlinedTextFieldColors(
-                            cursorColor = Color(0xffFF6740),
-                            focusedBorderColor = Color(0xffFF6740),
-                            unfocusedBorderColor = Color(0xffE6E6E6),
-                            backgroundColor = Color(0xffE6E6E6)
-                        )
-                    )
-                    Text(text = stringResource(R.string.text_forgotpassword),
-                        Modifier.padding(bottom = 8.dp),
-                        fontSize = 12.sp,
-                    )
-                }
-                Row() {
-                    Button(
-                        onClick = { /*TODO*/
-                            val isAuthenticated = doAuth(usernameInput,passwordInput)
-                            val isRegistred = doAuthregis(usernameInput,passwordInput,cUser,cPass)
-                            if(isAuthenticated||isRegistred)
-                                lContext.startActivity(
-                                    Intent(lContext, HomeActivity::class.java)
-                                        .apply {
-                                            putExtra("nama", listNama(fNameInput,lNameInput))
-                                        }
-                                )
-
-
-                        },
-                        modifier = paddingModifier,
-                        colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffFF6740))
-
-
-                    )
-                    {
-                        Text(text = stringResource(R.string.text_signin),
-                            color = Color.White)
-                    }
-                    Button(
-                        onClick = {
-                            getUsernameFormSignUpActivity.launch(null)
-                        }, modifier = paddingModifier,
-                        colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffFF6740))
-                    ) {
-                        Text(text = stringResource(R.string.text_register),
-                            color = Color.White)
 
                     }
+
+                    Column(modifier = Modifier.padding(start =10.dp, end = 10.dp)) {
+                        Text(text = stringResource(R.string.text_password),
+                            Modifier
+                                .padding(top = 8.dp)
+                                .padding(start = 5.dp),
+                            fontSize = 14.sp,
+                            fontFamily = Poppins
+
+                        )
+                        OutlinedTextField(
+                            value = passwordInput.toString(),
+                            onValueChange = {passwordInput = it},
+
+                            visualTransformation = PasswordVisualTransformation(),
+                            modifier = Modifier.fillMaxWidth(),
+                            shape = RoundedCornerShape(10.dp),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                cursorColor = Color(0xffFF6740),
+                                focusedBorderColor = Color(0xffFF6740),
+                                unfocusedBorderColor = Color(0xffE6E6E6),
+                                backgroundColor = Color(0xffE6E6E6)
+                            )
+                        )
+                        Text(text = stringResource(R.string.text_forgotpassword),
+                            Modifier.padding(bottom = 8.dp),
+                            fontSize = 12.sp,
+                        )
+                    }
+                    Row() {
+                        Button(
+                            onClick = { /*TODO*/
+                                val isAuthenticated = doAuth(usernameInput,passwordInput)
+                                val isRegistred = doAuthregis(usernameInput,passwordInput,cUser,cPass)
+                                if(isAuthenticated||isRegistred)
+                                    lContext.startActivity(
+                                        Intent(lContext, HomeActivity::class.java)
+                                            .apply {
+                                                putExtra("nama", listNama(fNameInput,lNameInput))
+                                            }
+                                    )
+
+
+                            },
+                            modifier = paddingModifier,
+                            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffFF6740))
+
+
+                        )
+                        {
+                            Text(text = stringResource(R.string.text_signin),
+                                color = Color.White,
+                                fontFamily = Poppins
+                            )
+
+                        }
+                        Button(
+                            onClick = {
+                                getUsernameFormSignUpActivity.launch(null)
+                            }, modifier = paddingModifier,
+                            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xffFF6740))
+                        ) {
+                            Text(text = stringResource(R.string.text_register),
+                                color = Color.White,
+                                fontFamily = Poppins
+                            )
+
+                        }
+                    }
+
+
+
                 }
-
-
 
             }
 
+
         }
-
-
-    }
     }
 
 

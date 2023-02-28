@@ -60,7 +60,7 @@ fun SearchScreen() {val scrollState = rememberScrollState()
             ) {
                 Text(
                     text = stringResource(R.string.text_advancedsearch),
-                    fontFamily = FontFamily.Monospace,
+                    fontFamily = Poppins,
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 20.sp,
                     color = Color.Black,
@@ -73,7 +73,7 @@ fun SearchScreen() {val scrollState = rememberScrollState()
                 )
             }
             Image(
-                painter = painterResource(id = R.drawable.hyoseop),
+                painter = painterResource(id = R.drawable.im_profile_screen_kucing),
                 contentDescription = "Profile picture",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
@@ -116,7 +116,7 @@ fun SearchScreen() {val scrollState = rememberScrollState()
                     )
                 },
                 trailingIcon = {
-                    Icon(icon,"contentDescription",
+                    Icon(icon,"sortlist",
                         Modifier.clickable { expanded = !expanded },
                         tint = Color.Black
                     )
@@ -133,7 +133,8 @@ fun SearchScreen() {val scrollState = rememberScrollState()
                         selectedText = label
                         expanded = false
                     }) {
-                        Text(text = label)
+                        Text(text = label,
+                            color = Color.Black)
                     }
                 }
             }
@@ -160,7 +161,7 @@ fun SearchScreen() {val scrollState = rememberScrollState()
         }
         Text(
             text = stringResource(R.string.text_browse),
-            fontFamily = FontFamily.Monospace,
+            fontFamily = Poppins,
             fontSize = 18.sp,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(start = 10.dp),
@@ -224,7 +225,7 @@ fun SearchScreen() {val scrollState = rememberScrollState()
                                 modifier = Modifier
                                     .padding(2.dp)
                                     .height(15.dp)
-                                    .width(69.dp),
+                                    .width(72.dp),
                                 backgroundColor = Color(0xffF0F1F2)
                             ) {
                                 Row() {
@@ -327,7 +328,7 @@ fun SearchScreen() {val scrollState = rememberScrollState()
                                 modifier = Modifier
                                     .padding(2.dp)
                                     .height(15.dp)
-                                    .width(69.dp),
+                                    .width(72.dp),
                                 backgroundColor = Color(0xffF0F1F2)
                             ) {
                                 Row() {
@@ -430,7 +431,7 @@ fun SearchScreen() {val scrollState = rememberScrollState()
                                 modifier = Modifier
                                     .padding(2.dp)
                                     .height(15.dp)
-                                    .width(69.dp),
+                                    .width(72.dp),
                                 backgroundColor = Color(0xffF0F1F2)
                             ) {
                                 Row() {
@@ -534,7 +535,7 @@ fun SearchScreen() {val scrollState = rememberScrollState()
                                 modifier = Modifier
                                     .padding(2.dp)
                                     .height(15.dp)
-                                    .width(69.dp),
+                                    .width(72.dp),
                                 backgroundColor = Color(0xffF0F1F2)
                             ) {
                                 Row() {
@@ -636,7 +637,7 @@ fun SearchScreen() {val scrollState = rememberScrollState()
                                 modifier = Modifier
                                     .padding(2.dp)
                                     .height(15.dp)
-                                    .width(69.dp),
+                                    .width(72.dp),
                                 backgroundColor = Color(0xffF0F1F2)
                             ) {
                                 Row() {
